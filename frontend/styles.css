@@ -1,0 +1,73 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    width: 100%;
+    max-width: 400px;
+}
+
+h1 {
+    color: #2c3e50;
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+#grocery-form {
+    display: flex;
+    margin-bottom: 1rem;
+}
+
+#grocery-input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px 0 0 4px;
+    font-size: 16px;
+}
+
+button {
+    padding: 10px 15px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #2980b9;
+}
+
+#grocery-list {
+    list-style: none;
+    padding: 0;
+}
+
+#grocery-list li {
+    padding: 10px;
+    background-color: #f9f9f9;
+    border: 1px solid #eee;
+    margin-top: 5px;
+    border-radius: 4px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#grocery-list li:hover {
+    background-color: #f0f0f0;
+}

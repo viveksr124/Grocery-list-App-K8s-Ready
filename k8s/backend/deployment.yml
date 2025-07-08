@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend-deployment
+  namespace: grocery-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: backend
+  template:
+    metadata:
+      labels:
+        app: backend
+    spec:
+      containers:
+        - name: backend
+          command: ["sh", "-c", "sleep 20 && npm start"]
+          image: backend:latest
+          imagePullPolicy: Never # For local KIND testing
+          ports:
+            - containerPort: 3000
+          env:
+            - name: MONGO_USER
+              valueFrom:
+                secretKeyRef:
+                  name: mongodb-secret
+                  key: username
+            - name: MONGO_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: mongodb-secret
+                  key: password
